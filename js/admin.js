@@ -247,6 +247,9 @@ function dsSanpham(){
                 <th>Xóa</th>
                 <th>Sửa</th>
             </tr>`
+    if(perPage>danhsachsanpham.length){
+        perPage = danhsachsanpham.length;
+    }
     for(var i=0;i<perPage;i++){
         tr +=
             `<tr>

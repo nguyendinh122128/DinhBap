@@ -61,10 +61,13 @@ function nhapTrang(i){
 // Hiện thị sản phẩm user
 
 function hienThiSP() {
-    if(localStorage.getItem('sanpham')===null){
+    if(localStorage.getItem('sanpham')==null){
         return false;
     }
     danhsachsanpham = JSON.parse(localStorage.getItem('sanpham'));
+    if(perPage>danhsachsanpham.length){
+        perPage = danhsachsanpham.length;
+    }
     var sp = "";
     for(var i = 0; i<perPage; i++){
         sp += sanPhamHTML(danhsachsanpham[i].idsanpham, danhsachsanpham[i].img, danhsachsanpham[i].tensanpham, danhsachsanpham[i].gia);
